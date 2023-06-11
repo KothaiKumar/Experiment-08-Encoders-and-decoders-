@@ -1,7 +1,10 @@
 # Experiment-08- Encoders-and-decoders 
-### AIM: To implement 8 to 3 Encoder and  3to8 Decoder using verilog and validate its outputs
-### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
-### SOFTWARE REQUIRED:   Quartus prime
+### AIM: 
+    To implement 8 to 3 Encoder and  3to8 Decoder using verilog and validate its outputs
+### HARDWARE REQUIRED:  
+    PC, Cyclone II , USB flasher
+### SOFTWARE REQUIRED:   
+     Quartus prime
 ### THEORY 
 
 ## Encoders
@@ -55,42 +58,75 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+Step 1:
+Open Quartus II and select new project and choose the file location. Step 2:
+
+Module Declaration. Module should have the file name.
+
+Step 3:
+Input-Output Delecaration.
+
+Step 4:
+Use assign to define the functionality of logic circuits.
+
+Step 5:
+At the end give endmodule.
+
+Step 6:
+Run the program and choose RTL viewer to get RTL realization.
 
 
 
 ### PROGRAM 
 /*
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: Kothai K
+RegisterNumber:  212222240051
 */
-
+## ENCODER
+```
+module encode(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+```
+## DECODER
+```
+module decoder(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+output d0,d1,d2,d3,d4,d5,d6,d7;
+input a,b,c;
+assign d0=(~a&~b&~c);
+assign d1=(~a&~b&c);
+assign d2=(~a&b&~c);
+endmodule
+```
 
 
 
 
 
 ### RTL LOGIC  
-
-
-
-
-
-
+## ENCODER
+![image](https://github.com/KothaiKumar/Experiment-08-Encoders-and-decoders-/assets/121215739/1ac18aa1-d8e4-4802-b1cf-d6539d2652f4)
+## DECODER
+![image](https://github.com/KothaiKumar/Experiment-08-Encoders-and-decoders-/assets/121215739/eb967d65-64e4-435d-8a83-ef58927e2387)
 
 
 ### TIMING DIGRAMS  
-
-
-
-
+## ENCODER
+![image](https://github.com/KothaiKumar/Experiment-08-Encoders-and-decoders-/assets/121215739/4f37b49b-1343-4c3f-b80e-dee5d3aff9b9)
+## DECODER
+![image](https://github.com/KothaiKumar/Experiment-08-Encoders-and-decoders-/assets/121215739/98fc85ce-0049-45c8-83b7-7584956f76c6)
 
 ### TRUTH TABLE 
-
-
-
-
+## ENCODER
+![image](https://github.com/KothaiKumar/Experiment-08-Encoders-and-decoders-/assets/121215739/9e9a2112-fbff-4f7e-8560-b8a513f1b313)
+## DECODER
+![image](https://github.com/KothaiKumar/Experiment-08-Encoders-and-decoders-/assets/121215739/8b89fda8-d3e4-491e-aff9-526000b3a853)
 
 
 ### RESULTS 
+Thus, 8 to 3 Encoder and 3 to 8 Decoder is implemented using verilog and its outputs is validated.
